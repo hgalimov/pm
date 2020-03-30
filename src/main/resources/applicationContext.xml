@@ -8,8 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="equiBean"
-          class="ru.uennar.EquiBean">
-        <constructor-arg value="Computer"/>
+          class="ru.uennar.MeasEqui">
     </bean>
 
 </beans>

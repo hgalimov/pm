@@ -7,12 +7,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:equiMaster.properties"/>
     <bean id="equiBean"
           class="ru.uennar.ElectricEqui">
     </bean>
     <bean id="equiMaster"
           class="ru.uennar.EquiMaster">
-        <constructor-arg ref="equiBean"/>
+        <property name="equi" ref="equiBean"/>
+        <property name="userName" value="${equiMaster.userName}"/>
+        <property name="shift" value="${equiMaster.shift}"/>
     </bean>
 
 </beans>

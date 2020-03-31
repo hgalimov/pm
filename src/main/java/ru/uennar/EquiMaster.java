@@ -1,7 +1,10 @@
 package ru.uennar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EquiMaster {
-    Equi equi;
+    List<Equi> equiList;
 
     public String getUserName() {
         return userName;
@@ -23,17 +26,22 @@ public class EquiMaster {
     int shift;
 
     public EquiMaster() {
+        equiList = new ArrayList<>();
     }
 
-    public EquiMaster(Equi equi) {
-        this.equi = equi;
-    }
+   /* public EquiMaster(List<Equi> equiList) {
+        this.equiList = equiList;
+    }*/
 
-    public void setEqui(Equi equi) {
-        this.equi = equi;
+    public void setEquiList(List<Equi> equiList) {
+        this.equiList = equiList;
     }
 
     public void getEquiBrand(){
-        System.out.println("Бренд выбранного оборудования: "+ equi.getBrand());
+        for (Equi equi:equiList
+             ) {
+            System.out.println("Бренд выбранного оборудования: "+ equi.getBrand());
+        }
+
     }
 }

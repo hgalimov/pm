@@ -1,3 +1,4 @@
 /pm.iml
 /.idea/
 /target/
+*.properties

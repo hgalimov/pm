@@ -8,12 +8,24 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:equiMaster.properties"/>
-    <bean id="equiBean"
+    <bean id="electricEqui"
           class="ru.uennar.ElectricEqui">
+    </bean>
+    <bean id="measEqui"
+          class="ru.uennar.MeasEqui">
+    </bean>
+    <bean id="compEqui"
+          class="ru.uennar.CompEqui">
     </bean>
     <bean id="equiMaster"
           class="ru.uennar.EquiMaster">
-        <property name="equi" ref="equiBean"/>
+        <property name="equiList">
+                <list>
+                    <ref bean="measEqui"/>
+                    <ref bean="compEqui"/>
+                    <ref bean="electricEqui"/>
+                </list>
+        </property>
         <property name="userName" value="${equiMaster.userName}"/>
         <property name="shift" value="${equiMaster.shift}"/>
     </bean>

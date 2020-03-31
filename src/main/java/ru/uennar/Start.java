@@ -10,7 +10,7 @@ public class Start {
         //EquiMaster equiMaster = new EquiMaster(equi);
         EquiMaster equiMaster = context.getBean("equiMaster", EquiMaster.class);
         equiMaster.getEquiBrand();
-        System.out.println("Пользователь, который обрабатывает оборудование: " +
+        System.out.println("Пользователь, который обрабатывает оборудования: " +
                 equiMaster.getUserName() + ". Смена: " + equiMaster.getShift());
         context.close();
     }

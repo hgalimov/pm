@@ -18,13 +18,14 @@
           class="ru.uennar.CompEqui">
     </bean>
     <bean id="equiMaster"
-          class="ru.uennar.EquiMaster">
+          class="ru.uennar.EquiMaster"
+          scope="prototype">
         <property name="equiList">
-                <list>
-                    <ref bean="measEqui"/>
-                    <ref bean="compEqui"/>
-                    <ref bean="electricEqui"/>
-                </list>
+            <list>
+                <ref bean="measEqui"/>
+                <ref bean="compEqui"/>
+                <ref bean="electricEqui"/>
+            </list>
         </property>
         <property name="userName" value="${equiMaster.userName}"/>
         <property name="shift" value="${equiMaster.shift}"/>

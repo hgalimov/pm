@@ -9,7 +9,10 @@
 
     <context:property-placeholder location="classpath:equiMaster.properties"/>
     <bean id="electricEqui"
-          class="ru.uennar.ElectricEqui">
+          class="ru.uennar.ElectricEqui"
+          init-method="doInit"
+          destroy-method="doDestroy"
+          factory-method="getElectricEqui">
     </bean>
     <bean id="measEqui"
           class="ru.uennar.MeasEqui">
@@ -19,7 +22,9 @@
     </bean>
     <bean id="equiMaster"
           class="ru.uennar.EquiMaster"
-          scope="prototype">
+          scope="prototype"
+          init-method="doInit"
+          destroy-method="doDestroy">
         <property name="equiList">
             <list>
                 <ref bean="measEqui"/>

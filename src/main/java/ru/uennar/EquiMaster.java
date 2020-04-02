@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EquiMaster {
+
+
     List<Equi> equiList;
 
     public String getUserName() {
@@ -25,6 +27,12 @@ public class EquiMaster {
     String userName;
     int shift;
 
+    public void doInit(){
+        System.out.println("Бин equi-master инициализировался");
+    }
+    public void doDestroy(){
+        System.out.println("Бин equi-master удалился");
+    }
     public EquiMaster() {
         equiList = new ArrayList<>();
     }

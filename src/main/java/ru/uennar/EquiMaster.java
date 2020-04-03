@@ -1,55 +1,31 @@
 package ru.uennar;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+@Component
 public class EquiMaster {
-
-
     List<Equi> equiList;
+    String str = "";
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public int getShift() {
-        return shift;
-    }
-
-    public void setShift(int shift) {
-        this.shift = shift;
-    }
-
-    String userName;
-    int shift;
-
-    public void doInit(){
-        System.out.println("Бин equi-master инициализировался");
-    }
-    public void doDestroy(){
-        System.out.println("Бин equi-master удалился");
-    }
-    public EquiMaster() {
+    @Autowired
+    public EquiMaster(CompEqui compEqui, ElectricEqui electricEqui, MeasEqui measEqui) {
         equiList = new ArrayList<>();
+        equiList.add(electricEqui);
+        equiList.add(measEqui);
+        equiList.add(compEqui);
     }
 
-   /* public EquiMaster(List<Equi> equiList) {
-        this.equiList = equiList;
-    }*/
-
-    public void setEquiList(List<Equi> equiList) {
-        this.equiList = equiList;
-    }
-
-    public void getEquiBrand(){
-        for (Equi equi:equiList
-             ) {
-            System.out.println("Бренд выбранного оборудования: "+ equi.getBrand());
+    public String getEquiBrand() {
+        for (Equi equi : equiList
+        ) {
+            str+="Бренд выбранного оборудования: " + equi.getBrand() + " " + equi.toString() + '\n';
         }
-
+        return str;
     }
 }

@@ -7,6 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="ru.uennar"/>
     <context:property-placeholder location="classpath:equiMaster.properties"/>
     <bean id="electricEqui"
           class="ru.uennar.ElectricEqui"
@@ -14,12 +15,12 @@
           destroy-method="doDestroy"
           factory-method="getElectricEqui">
     </bean>
-    <bean id="measEqui"
+    <!--<bean id="measEqui"
           class="ru.uennar.MeasEqui">
-    </bean>
-    <bean id="compEqui"
+    </bean>-->
+   <!-- <bean id="compEqui"
           class="ru.uennar.CompEqui">
-    </bean>
+    </bean>-->
     <bean id="equiMaster"
           class="ru.uennar.EquiMaster"
           scope="prototype"

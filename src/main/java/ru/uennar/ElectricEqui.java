@@ -1,5 +1,8 @@
 package ru.uennar;
 
+import org.springframework.stereotype.Component;
+
+
 public class ElectricEqui implements Equi{
     private ElectricEqui() {
     }

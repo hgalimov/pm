@@ -14,6 +14,6 @@ public class User {
     }
     @Override
     public String toString() {
-        return "Пользователь " + name + "обрабатывает оборудования \n" + equiMaster.getEquiBrand();
+        return "Пользователь " + name + " обрабатывает оборудования \n" + equiMaster.getEquiBrand(TypeEqui.COMP);
     }
 }

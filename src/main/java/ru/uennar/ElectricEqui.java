@@ -2,24 +2,25 @@ package ru.uennar;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
-public class ElectricEqui implements Equi{
-    private ElectricEqui() {
+public class ElectricEqui implements Equi {
+    public List<String> getEquiList() {
+        return equiList;
     }
 
-    public static ElectricEqui getElectricEqui(){
-        return new ElectricEqui();
+    List<String> equiList = new ArrayList<>();
+
+    public ElectricEqui() {
+        equiList.add("Vitek");
+        equiList.add("Bosch");
     }
 
-    public void doInit(){
-        System.out.println("Бин инициализировался");
-    }
-    public void doDestroy(){
-        System.out.println("Бин удалился");
-    }
     @Override
-    public String getBrand() {
-        return "Vitek";
+    public String getBrand(int idx) {
+        return equiList.get(idx);
     }
 
 }

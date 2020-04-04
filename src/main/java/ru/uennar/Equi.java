@@ -1,5 +1,5 @@
 package ru.uennar;
 
 public interface Equi {
-    String getBrand();
+    String getBrand(int idx);
 }

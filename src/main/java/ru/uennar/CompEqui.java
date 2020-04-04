@@ -1,11 +1,13 @@
 package ru.uennar;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Scope("singleton")
 public class CompEqui implements Equi {
     public List<String> getEquiList() {
         return equiList;

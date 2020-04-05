@@ -22,6 +22,7 @@ public class EquiMaster {
     private Equi measEqui;
     private Equi measEqui2;
     private Equi electricEqui;
+    private Equi mechanicEqui;
     public String getName() {
         return name;
     }
@@ -31,7 +32,7 @@ public class EquiMaster {
     }
     String str = "";
 
-    @Autowired
+   // @Autowired
     public EquiMaster(@Qualifier("compEqui") Equi cmpEqui, @Qualifier("measEqui") Equi msEqui,
                       @Qualifier("electricEqui") Equi elEqui, @Qualifier("compEqui")Equi compEqui2,
                       @Qualifier("measEqui") Equi msEqui2) {
@@ -40,6 +41,10 @@ public class EquiMaster {
         this.electricEqui = elEqui;
         this.compEqui2 = compEqui2;
         this.measEqui2 = msEqui2;
+    }
+
+    public EquiMaster(MechanicEqui mechanicEqui){
+        this.mechanicEqui = mechanicEqui;
     }
 
     public String getEquiBrand(TypeEqui typeEqui) {
@@ -55,6 +60,8 @@ public class EquiMaster {
             case MEAS:
                 equiList = ((MeasEqui) measEqui).getEquiList();
                 break;
+            case MECH:
+                return mechanicEqui.getBrand(0);
         }
         Random random = new Random();
         int idx = random.nextInt(equiList.size());

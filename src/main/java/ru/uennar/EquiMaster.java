@@ -15,7 +15,7 @@ public class EquiMaster {
     @Value("${equiMaster.userName}")
     private String name;
     @Value("${equiMaster.shift}")
-    private int shift;
+    private String shift;
 
     private Equi compEqui;
     private Equi compEqui2;
@@ -27,7 +27,7 @@ public class EquiMaster {
         return name;
     }
 
-    public int getShift() {
+    public String getShift() {
         return shift;
     }
     String str = "";
@@ -42,6 +42,7 @@ public class EquiMaster {
         this.compEqui2 = compEqui2;
         this.measEqui2 = msEqui2;
     }
+    public EquiMaster(){}
 
     public EquiMaster(MechanicEqui mechanicEqui){
         this.mechanicEqui = mechanicEqui;

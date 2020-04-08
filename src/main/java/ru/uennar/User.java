@@ -9,7 +9,7 @@ import java.util.Random;
 public class User {
     private String name;
     private EquiMaster equiMaster;
-    private int shift;
+    private String shift;
     @Autowired
     public User(EquiMaster equiMaster){
         this.equiMaster = equiMaster;

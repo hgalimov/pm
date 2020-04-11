@@ -22,6 +22,7 @@ public class ElectricEqui implements Equi {
     public void preDestroy(){
         System.out.println("Бин электрооборудования удаляется");
     }
+    @Override
     public List<String> getEquiList() {
         return equiList;
     }

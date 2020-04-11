@@ -19,6 +19,13 @@ public class User {
     @Override
     public String toString() {
         return "Пользователь " + name + " в смене " + shift + " обрабатывает оборудования " +
-                "\n" + equiMaster.getEquiBrand(TypeEqui.MECH/*TypeEqui.getRandomTypeEqui()*/);
+                "\n" + equiMaster.getEquiBrand(TypeEqui.COMP/*TypeEqui.getRandomTypeEqui()*/);
+    }
+    public String equiList(){
+        return equiMaster.getEquiList();
+    }
+
+    public void addEqui() {
+        equiMaster.addEqui();
     }
 }

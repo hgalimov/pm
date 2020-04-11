@@ -9,6 +9,7 @@ import java.util.List;
 @Component
 @Scope("singleton")
 public class CompEqui implements Equi {
+    @Override
     public List<String> getEquiList() {
         return equiList;
     }

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("ru.uennar")
 @PropertySource("classpath:equiMaster.properties")
 public class SpringConfig {
-    @Bean
+    /*@Bean
     public MechanicEqui mechanicEqui(){
         return new MechanicEqui();
     }
@@ -17,5 +17,5 @@ public class SpringConfig {
     @Bean
     public EquiMaster equiMaster(){
         return new EquiMaster(mechanicEqui());
-    }
+    }*/
 }

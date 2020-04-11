@@ -16,10 +16,14 @@ public class StartController {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         User user = context.getBean("user", User.class);
         model.addAttribute("msg", user.toString());
+        model.addAttribute("equis", user.equiList());
         return "/start/getInfo";
     }
     @GetMapping("/start")
     public String start(){
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        User user = context.getBean("user", User.class);
+        user.addEqui();
         return "/start/start";
     }
 }

@@ -23,6 +23,9 @@ public class EquiMaster {
     private Equi measEqui2;
     private Equi electricEqui;
     private Equi mechanicEqui;
+
+    List<Equi> equiList1 = new ArrayList<>();
+
     public String getName() {
         return name;
     }
@@ -30,23 +33,28 @@ public class EquiMaster {
     public String getShift() {
         return shift;
     }
+
     String str = "";
 
-   // @Autowired
+    @Autowired
     public EquiMaster(@Qualifier("compEqui") Equi cmpEqui, @Qualifier("measEqui") Equi msEqui,
-                      @Qualifier("electricEqui") Equi elEqui, @Qualifier("compEqui")Equi compEqui2,
+                      @Qualifier("electricEqui") Equi elEqui, @Qualifier("compEqui") Equi compEqui2,
                       @Qualifier("measEqui") Equi msEqui2) {
         this.compEqui = cmpEqui;
         this.measEqui = msEqui;
         this.electricEqui = elEqui;
         this.compEqui2 = compEqui2;
         this.measEqui2 = msEqui2;
+        equiList1.add(this.compEqui);
+        equiList1.add(this.measEqui);
     }
-    public EquiMaster(){}
 
-    public EquiMaster(MechanicEqui mechanicEqui){
-        this.mechanicEqui = mechanicEqui;
+   /* public EquiMaster() {
     }
+
+    public EquiMaster(MechanicEqui mechanicEqui) {
+        this.mechanicEqui = mechanicEqui;
+    }*/
 
     public String getEquiBrand(TypeEqui typeEqui) {
         List<String> equiList = new ArrayList<>();
@@ -81,5 +89,27 @@ public class EquiMaster {
                 break;
         }
         return str;
+    }
+
+    public String getEquiList() {
+        String equis = "";
+        List<String> brands = new ArrayList<>();
+        for (Equi equi : equiList1
+        ) {
+            brands = equi.getEquiList();
+            for (String brand: brands
+                 ) {equis += brand + " ";
+
+            }
+        }
+        return equis.trim();
+    }
+
+    public void addEqui() {
+        List<String> brands = new ArrayList<>();
+        for (Equi equi : equiList1
+        ) {
+            equi.getEquiList().add("TestПервый");
+        }
     }
 }

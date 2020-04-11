@@ -9,6 +9,7 @@ import java.util.List;
 @Component("measEqui")
 @Scope("prototype")
 public class MeasEqui implements Equi{
+    @Override
     public List<String> getEquiList() {
         return equiList;
     }

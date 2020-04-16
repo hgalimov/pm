@@ -12,7 +12,6 @@ import java.util.List;
 @Component
 public class ElectricEqui implements Equi {
     List<String> equiList = new ArrayList<>();
-
     @PostConstruct
     public void init(){
         System.out.println("Бин электрооборудования инициализировался");
@@ -22,16 +21,15 @@ public class ElectricEqui implements Equi {
     public void preDestroy(){
         System.out.println("Бин электрооборудования удаляется");
     }
-    @Override
-    public List<String> getEquiList() {
-        return equiList;
-    }
-
-
 
     public ElectricEqui() {
         equiList.add("Vitek");
         equiList.add("Bosch");
+    }
+
+    @Override
+    public List<String> getEquiList() {
+        return equiList;
     }
 
     @Override

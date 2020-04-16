@@ -8,22 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.uennar.SpringConfig;
 import ru.uennar.User;
 
+
 @Controller
 @RequestMapping("/start")
 public class StartController {
-    @GetMapping("/getInfo")
+
+    @GetMapping("/getEquiList")
     public String getInfo(ModelMap model){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        AnnotationConfigApplicationContext context =
+                 new AnnotationConfigApplicationContext(SpringConfig.class);
+        User user = context.getBean("user", User.class);
+        model.addAttribute("equis", user.equiList());
+        return "/start/getEquiList";
+    }
+    @GetMapping("/getEquiBrand")
+    public String start(ModelMap model){
+        AnnotationConfigApplicationContext context =
+                 new AnnotationConfigApplicationContext(SpringConfig.class);
         User user = context.getBean("user", User.class);
         model.addAttribute("msg", user.toString());
-        model.addAttribute("equis", user.equiList());
-        return "/start/getInfo";
-    }
-    @GetMapping("/start")
-    public String start(){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        User user = context.getBean("user", User.class);
-        user.addEqui();
-        return "/start/start";
+        return "/start/getEquiBrand";
     }
 }

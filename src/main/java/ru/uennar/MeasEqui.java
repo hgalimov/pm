@@ -9,15 +9,14 @@ import java.util.List;
 @Component("measEqui")
 @Scope("prototype")
 public class MeasEqui implements Equi{
+    List<String> equiList = new ArrayList<>();
+    public MeasEqui() {
+        equiList.add("Testo");
+    }
+
     @Override
     public List<String> getEquiList() {
         return equiList;
-    }
-
-    List<String> equiList = new ArrayList<>();
-
-    public MeasEqui() {
-        equiList.add("Testo");
     }
 
     @Override

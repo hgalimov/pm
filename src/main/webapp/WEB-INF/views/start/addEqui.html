@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить ЕО (единица оборудования)</title>
+</head>
+<body>
+<form action="/addEquiPage" th:action="@{addEqui}" th:object="${equi}" method="post">
+    <table border="1">
+        <tr>
+            <td><label th:text="#{msg.name}" /></td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Добавить" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

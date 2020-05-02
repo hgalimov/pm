@@ -3,10 +3,7 @@ package ru.uennar.controllers;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.uennar.CompEqui;
 import ru.uennar.SpringConfig;
 import ru.uennar.User;
@@ -40,5 +37,12 @@ public class StartController {
     @PostMapping("/addEqui")
     public String addEqui(@ModelAttribute Equi equi, ModelMap model){
         return "/start/addEqui";
+    }
+
+   @RequestMapping(value = "/returnRaw", method = RequestMethod.GET,
+            produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String returnRaw(ModelMap model){
+        return "{testтест}";
     }
 }

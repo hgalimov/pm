@@ -1,4 +1,4 @@
-package ru.uennar;
+package ru.uennar.basic;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -6,12 +6,15 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("measEqui")
-@Scope("prototype")
-public class MeasEqui implements Equi{
+@Component
+@Scope("singleton")
+public class CompEqui implements Equi {
     List<String> equiList = new ArrayList<>();
-    public MeasEqui() {
-        equiList.add("Testo");
+
+    public CompEqui() {
+        equiList.add("Acer");
+        equiList.add("HP");
+        equiList.add("Bell");
     }
 
     @Override

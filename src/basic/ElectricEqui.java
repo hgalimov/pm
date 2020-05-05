@@ -1,4 +1,4 @@
-package ru.uennar;
+package ru.uennar.basic;
 
 import org.springframework.stereotype.Component;
 

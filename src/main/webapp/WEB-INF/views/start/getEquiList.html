@@ -8,8 +8,10 @@
 <body>
 
 <p>ИнформациAя Information</p>
-<p th:text="${equis}" />
-<a href="getEquiBrand">Выбрать оборудование</a>
+<tr th:each="equi: ${equis}">
+    <td th:text="${equi.id}" />
+    <td th:text="${equi.name}" />
+</tr>
 
 </body>
 

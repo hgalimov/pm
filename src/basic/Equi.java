@@ -1,4 +1,4 @@
-package ru.uennar;
+package ru.uennar.basic;
 
 import java.util.ArrayList;
 import java.util.List;
